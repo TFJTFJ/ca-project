@@ -13,11 +13,12 @@ RUN pip install --no-cache-dir -r /usr/src/app/requirements.txt
 
 # Copy files required for the app to run
 COPY *.py /usr/src/app/
+COPY *.sh /usr/src/app/
 COPY app/ /usr/src/app/app/
 
 # Declare the port number the container should expose
 EXPOSE 5000
 
 # Run the application
-CMD ["python", "/usr/src/app/run.py"]
+CMD ["/usr/src/app/run.sh"]
 
